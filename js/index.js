@@ -22,25 +22,21 @@
 
 const adminLogin = 'admin';
 const adminPassword = 'm4ngo1zh4ackz0r';
-let massege;
-const admin = prompt('Please enter username');
-if (admin === null) {
-    massage = 'cancelled by the client!';
-    alert (massage);
-} else if ( admin !== 'admin') {
-    massage = 'Access is prohibited, login isn`t true!';
-    alert (massage);
-} else if ( adminLogin === 'admin') {
-    const admin = prompt('Please enter password');
-    if (admin === null){
-        massage= 'cancelled by the client!';
-        alert(massage)
-    } else if ( admin !== adminPassword){
-        massage= 'Access is prohibited, login isn`t true!';
-        alert(massage)
-    } else if (admin === adminPassword){
-        massage= 'Welcome!';
-        alert (massage)
+let message;
+const input = prompt('Please enter username');
+if (input === null) {
+    message = 'cancelled by the client!';
+} else if (input !== 'admin') {
+    message = 'Access is prohibited, login isn`t true!';
+} else if (input === adminLogin) {
+    const passwordInput = prompt('Please enter password');
+    if ( passwordInput === null) {
+    message = 'cancelled by the client!';
+    } else if (passwordInput !== adminPassword){
+    message= 'Access is prohibited, password isn`t true!';
+    } else if (passwordInput === adminPassword){
+        message= 'Welcome!';    
     }
 }
-console.log(massage)
+alert (message)
+console.log(message)
